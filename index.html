@@ -1,65 +1,60 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Il Mio Videogioco - Aggiornamenti</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Game Updates</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Selettore lingua (cover iniziale) -->
-  <div id="languageOverlay" class="overlay language-overlay" role="dialog" aria-modal="true">
-    <div class="overlay-content">
-      <h4>🌍 Choose Language / Scegli la Lingua</h4>
-      <div class="overlay-buttons">
-        <button id="langIt">🇮🇹 Italiano</button>
-        <button id="langEn">🇬🇧 English</button>
-      </div>
-    </div>
-  </div>
 
-  <header>
-    <h1 id="title">🎮 Il Mio Videogioco</h1>
-    <p id="subtitle" class="subtitle">Aggiornamenti e Download</p>
-  </header>
-
-  <main>
-    <section class="post">
-      <h2 id="updateTitle">📢 Aggiornamento 1.0</h2>
-      <p id="updateText">Finalmente il gioco è disponibile per il download! Scaricalo qui sotto.</p>
-      <a id="downloadBtn" class="download-btn" href="gioco.zip" download>⬇️ Scarica il Gioco</a>
-
-      <div class="comments-section">
-        <h3 id="commentsTitle">💬 Commenti</h3>
-
-        <!-- Overlay accettazione commenti (compare DOPO scelta lingua, se necessario) -->
-        <div id="acceptOverlay" class="overlay accept-overlay" role="dialog" aria-modal="true" aria-hidden="true">
-          <div class="overlay-content">
-            <h4 id="warningTitle">⚠️ Avviso</h4>
-            <p id="warningText">
-              I commenti sono pubblici e non moderati in tempo reale.<br>
-              L'autore del sito non è responsabile di contenuti offensivi o inappropriati.<br>
-              Proseguendo, accetti di leggere i commenti senza filtro.
-            </p>
-            <div class="overlay-buttons">
-              <button id="acceptBtn">✅ Accetto</button>
-              <button id="declineBtn">❌ Rifiuto</button>
-            </div>
-          </div>
+<!-- Overlay Warning -->
+<div class="overlay" id="warningOverlay">
+    <div class="overlay-content animate-in">
+        <h2>Comments Warning</h2>
+        <p>
+            I, the creator of this site, am not responsible for any offensive or inappropriate comments.
+            There is no moderation or filtering system in place. View comments at your own risk.
+        </p>
+        <div class="overlay-buttons">
+            <button id="acceptBtn">Accept</button>
+            <button id="declineBtn">Decline</button>
         </div>
+    </div>
+</div>
 
-        <!-- Area commenti -->
-        <div id="comments" aria-live="polite" class="comments-list"></div>
+<header>
+    <h1>My Awesome Game</h1>
+    <p class="subtitle">Latest updates & download</p>
+</header>
 
-        <!-- Form per inviare commenti (visibile solo dopo accettazione) -->
-        <form id="commentForm" style="display:none;" class="comment-form" aria-hidden="true">
-          <textarea id="commentInput" placeholder="Scrivi un commento..." required></textarea>
-          <button id="sendBtn" type="submit">Invia</button>
-        </form>
-      </div>
+<main>
+    <section id="updates">
+        <h2>Latest Updates</h2>
+        <p>
+            Welcome to the update page! Here you can see the latest changes, fixes, and new features of my game.
+            I’m constantly improving it, so stay tuned for more surprises!
+        </p>
+        <div class="gallery-container">
+            <img src="update1.jpg" alt="Update Screenshot 1">
+            <img src="update2.jpg" alt="Update Screenshot 2">
+            <img src="update3.jpg" alt="Update Screenshot 3">
+        </div>
+        <div class="download-container">
+            <a href="game-download.zip" class="btn">Download Game</a>
+        </div>
     </section>
-  </main>
 
-  <script src="script.js"></script>
+    <section id="comments-section">
+        <h2>Community Comments</h2>
+        <div id="comments"></div>
+        <form id="commentForm">
+            <textarea id="commentInput" placeholder="Write your comment here..." required></textarea>
+            <button type="submit">Send Comment</button>
+        </form>
+    </section>
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>
